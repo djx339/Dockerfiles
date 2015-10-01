@@ -1,0 +1,9 @@
+app:
+    build: .
+    ports:
+        - "3000:3000"
+        - "2222:22"
+    volumes:
+        - .:/usr/src/app
+    working_dir: /usr/src/app
+    restart: always
