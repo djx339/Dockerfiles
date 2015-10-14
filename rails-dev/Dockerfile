@@ -1,51 +1,5 @@
-FROM ubuntu:14.04
+FROM djx339/buildpack-deps:ubuntu-14.04
 MAINTAINER Daniel D <djx339@gmail.com>
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-        ca-certificates \
-        curl \
-        cmake \
-        wget \
-        bzr \
-        git \
-        mercurial \
-        openssh-client \
-        subversion \
-        autoconf \
-        automake \
-        bzip2 \
-        file \
-        g++ \
-        gcc \
-        imagemagick \
-        libbz2-dev \
-        libc6-dev \
-        libcurl4-openssl-dev \
-        libevent-dev \
-        libffi-dev \
-        libgeoip-dev \
-        libglib2.0-dev \
-        libjpeg-dev \
-        liblzma-dev \
-        libmagickcore-dev \
-        libmagickwand-dev \
-        libmysqlclient-dev \
-        libncurses-dev \
-        libpng-dev \
-        libpq-dev \
-        libreadline-dev \
-        libsqlite3-dev \
-        libssl-dev \
-        libtool \
-        libwebp-dev \
-        libxml2-dev \
-        libxslt-dev \
-        libyaml-dev \
-        make \
-        patch \
-        xz-utils \
-        zlib1g-dev \
-    && rm -rf /var/lib/apt/lists/*
 
 ENV RUBY_MAJOR 2.2
 ENV RUBY_VERSION 2.2.3
@@ -85,15 +39,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 ENV GEM_HOME /usr/local/bundle
 ENV PATH $GEM_HOME/bin:$PATH
-
 ENV BUNDLER_VERSION 1.10.6
 
 RUN gem install bundler --version "$BUNDLER_VERSION" \
     && bundle config --global path "$GEM_HOME" \
     && bundle config --global bin "$GEM_HOME/bin"
-
-# don't create ".bundle" in all our apps
-ENV BUNDLE_APP_CONFIG $GEM_HOME
 
 RUN gem install rails --version "$RAILS_VERSION"
 
