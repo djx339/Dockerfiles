@@ -51,7 +51,8 @@ ONBUILD RUN COPY id_rsa.pub /root/.ssh/authorized_keys
 ONBUILD RUN chmod 700 /root/.ssh && chmod 600 /root/.ssh/authorized_keys
 
 # Setup dev env
-RUN git clone https://github.com/djx339/dotfiles.git ~/dotfiles
+RUN git clone https://github.com/djx339/dotfiles.git ~/dotfiles \
+    && /root/dotfiles/install.sh
 
 EXPOSE 3000
 
