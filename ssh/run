@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+env | grep PATH > /etc/environment
+env | grep _   >> /etc/environment
+
+/usr/bin/supervisord
