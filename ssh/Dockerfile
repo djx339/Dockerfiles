@@ -11,7 +11,7 @@ RUN mkdir -p /var/run/sshd /var/log/supervisor \
 
 ONBUILD COPY id_rsa.pub /root/.ssh/authorized_keys
 ONBUILD RUN chmod 700 /root/.ssh \
-        chmod 600 /root/.ssh/authorized_keys
+        && chmod 600 /root/.ssh/authorized_keys
 
 # supervisor configuration
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
