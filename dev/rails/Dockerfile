@@ -47,7 +47,7 @@ RUN gem install bundler --version "$BUNDLER_VERSION" \
 
 RUN gem install rails --version "$RAILS_VERSION"
 
-ONBUILD RUN COPY id_rsa.pub /root/.ssh/authorized_keys
+ONBUILD COPY id_rsa.pub /root/.ssh/authorized_keys
 ONBUILD RUN chmod 700 /root/.ssh && chmod 600 /root/.ssh/authorized_keys
 
 # Setup dev env
