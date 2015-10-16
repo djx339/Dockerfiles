@@ -41,6 +41,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         mercurial \
         openssh-client \
         patch \
+        python-dev \
         subversion \
         wget \
         xz-utils \
