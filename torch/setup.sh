@@ -3,8 +3,6 @@
 set -ex
 
 export PS1="# "
-export http_proxy
-export https_proxy
 
 # install base deps
 apt-get update 
