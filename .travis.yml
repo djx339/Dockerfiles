@@ -4,6 +4,7 @@ services:
   - docker
   
 script:
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker info
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker build -t djx339/torch torch/
   - docker push djx339/torch
