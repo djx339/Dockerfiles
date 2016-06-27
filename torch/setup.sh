@@ -8,7 +8,6 @@ export PS1="# "
 apt-get update 
 apt-get install -y --no-install-recommends \
     git \
-    libopencv-dev \
     software-properties-common \
     python-software-properties
 
@@ -21,14 +20,14 @@ bash install-deps
 
 rm -rf /var/lib/apt/lists/*
 
-source ~/.bashrc
+# source ~/.bashrc
 
 # install 3rd packages
-luarocks install luasocket
-luarocks install cutorch
-luarocks install cunn
-luarocks install cunnx
-luarocks install rnn
-luarocks install dp
-luarocks install qtlua
-luarocks install qttorch
+# luarocks install luasocket
+# luarocks install cutorch
+# luarocks install cunn
+# luarocks install cunnx
+# luarocks install rnn
+# luarocks install dp
+# luarocks install qtlua
+# luarocks install qttorch
