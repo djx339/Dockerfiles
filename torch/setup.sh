@@ -8,7 +8,6 @@ export PS1="# "
 apt-get update 
 apt-get install -y --no-install-recommends \
     git \
-    software-properties-common \
     python-software-properties
 
 # install torch
